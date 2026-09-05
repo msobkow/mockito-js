@@ -1,7 +1,7 @@
 plugins {
     id("java")
     id("mockito.test-conventions")
-    id("org.graalvm.buildtools.native") version "0.11.1"
+    id("org.graalvm.buildtools.native") version "1.1.11"
 }
 
 description = "Test suite for exercising subclass mock maker with GraalVM native image"
