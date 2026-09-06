@@ -6,10 +6,14 @@ import org.objectweb.asm.ModuleVisitor
 import org.objectweb.asm.Opcodes
 
 plugins {
-    id("mockito.library-conventions")
-    id("mockito.java-backward-compatibility-checks-conventions")
-    id("mockito.javadoc-conventions")
-    id("java-test-fixtures")
+    id("server.markhome.mcf.v3_1.mockito.library-conventions")
+    id("server.markhome.mcf.v3_1.mockito.java-backward-compatibility-checks-conventions")
+    id("server.markhome.mcf.v3_1.mockito.javadoc-conventions")
+    id("server.markhome.mcf.v3_1.java-test-fixtures")
+    //id("mockito.library-conventions")-->
+    //id("mockito.java-backward-compatibility-checks-conventions")-->
+    //id("mockito.javadoc-conventions")-->
+    //id("java-test-fixtures")-->
 }
 
 description = "Mockito mock objects library core API and implementation"
@@ -37,23 +41,37 @@ with(components["java"] as AdhocComponentWithVariants) {
 }
 
 dependencies {
-    api(libs.bytebuddy)
-    api(libs.bytebuddy.agent)
+    api(server.markhome.mcf.v3_1.libs.bytebuddy)
+    api(server.markhome.mcf.v3_1.libs.bytebuddy.agent)
+    //api(libs.bytebuddy)-->
+    //api(libs.bytebuddy.agent)-->
 
-    compileOnly(libs.junit4)
-    compileOnly(libs.hamcrest)
-    compileOnly(libs.opentest4j)
-    compileOnly(libs.jspecify)
-    implementation(libs.objenesis)
+    compileOnly(server.markhome.mcf.v3_1.libs.junit4)
+    compileOnly(server.markhome.mcf.v3_1.libs.hamcrest)
+    compileOnly(server.markhome.mcf.v3_1.libs.opentest4j)
+    compileOnly(server.markhome.mcf.v3_1.libs.jspecify)
+    //compileOnly(libs.junit4)-->
+    //compileOnly(libs.hamcrest)-->
+    //compileOnly(libs.opentest4j)-->
+    //compileOnly(libs.jspecify)-->
+    implementation(server.markhome.mcf.v3_1.libs.objenesis)
+    //implementation(libs.objenesis)-->
 
-    testImplementation(libs.assertj)
-    testImplementation(libs.junit.jupiter.api)
-    testImplementation(libs.junit.jupiter.params)
+    testImplementation(server.markhome.mcf.v3_1.libs.assertj)
+    testImplementation(server.markhome.mcf.v3_1.libs.junit.jupiter.api)
+    testImplementation(server.markhome.mcf.v3_1.libs.junit.jupiter.params)
+    //testImplementation(libs.assertj)-->
+    //testImplementation(libs.junit.jupiter.api)-->
+    //testImplementation(libs.junit.jupiter.params)-->
 
-    testFixturesImplementation(libs.assertj)
-    testFixturesImplementation(libs.objenesis)
-    testFixturesCompileOnly(libs.junit4)
-    testFixturesCompileOnly(libs.junit.jupiter.api)
+    testFixturesImplementation(server.markhome.mcf.v3_1.libs.assertj)
+    testFixturesImplementation(server.markhome.mcf.v3_1.libs.objenesis)
+    testFixturesCompileOnly(server.markhome.mcf.v3_1.libs.junit4)
+    testFixturesCompileOnly(server.markhome.mcf.v3_1.libs.junit.jupiter.api)
+    //testFixturesImplementation(libs.assertj)-->
+    //testFixturesImplementation(libs.objenesis)-->
+    //testFixturesCompileOnly(libs.junit4)-->
+    //testFixturesCompileOnly(libs.junit.jupiter.api)-->
 }
 
 mockitoJavadoc {
